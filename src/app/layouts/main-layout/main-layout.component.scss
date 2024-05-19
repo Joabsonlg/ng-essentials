@@ -1,0 +1,94 @@
+$sidebar-width: 12rem;
+$retracted-width: 5.6rem;
+$transition-speed: 0.2s;
+$dark-color: #343a40;
+$white-color: white;
+$navbar-height: 60px;
+$footer-height: 65px;
+
+@mixin grid-area($name) {
+  grid-area: $name;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: $navbar-height 1fr $footer-height;
+  grid-template-columns: $sidebar-width 1fr;
+  grid-template-areas:
+    "sidebar navbar"
+    "sidebar content"
+    "sidebar footer";
+  min-height: 100vh;
+  transition: grid-template-columns $transition-speed ease-in;
+
+  &.retracted {
+    grid-template-columns: $retracted-width 1fr;
+    transition: grid-template-columns $transition-speed ease-in-out;
+  }
+}
+
+.footer {
+  @include grid-area(footer);
+  padding: 0.5rem 1rem;
+  z-index: 1030;
+  background-color: $dark-color;
+  color: $white-color;
+}
+
+.navbar {
+  @include grid-area(navbar);
+  z-index: 1020;
+}
+
+.sidebar {
+  @include grid-area(sidebar);
+  background-color: $dark-color;
+  color: $white-color;
+  z-index: 1020;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: $sidebar-width;
+  overflow-y: auto;
+  transition: width $transition-speed ease-in;
+
+  &.retracted {
+    width: $retracted-width;
+    transition: width $transition-speed ease-in-out;
+    align-items: center;
+  }
+}
+
+.main-content {
+  @include grid-area(content);
+  overflow-y: auto;
+  padding: 10px 10px 30px;
+}
+
+@media (max-width: 992px) {
+  .app {
+    grid-template-columns: 0 1fr;
+  }
+
+  .main-content, .footer {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.nav-link {
+  color: $white-color;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}

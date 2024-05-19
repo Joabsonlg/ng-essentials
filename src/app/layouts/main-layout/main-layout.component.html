@@ -1,0 +1,58 @@
+<div class="app" [class.retracted]="!isSidebarOpen">
+  <!-- Navbar/Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+    <!-- Navbar brand/logo -->
+    <a class="navbar-brand" href="#">NgEssentials</a>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="d-flex flex-column flex-shrink-0 sidebar p-2" [class.retracted]="!isSidebarOpen">
+    <div *ngIf="isSidebarOpen" class="close-button d-flex align-items-center" (click)="toggleSidebar()">
+      <i class="ph ph-caret-circle-left me-1" style="font-size: 1.25rem"></i>
+      <p class="m-0" style="font-size: 13px">Compactar menu</p>
+    </div>
+    <i *ngIf="!isSidebarOpen" class="ph ph-list menu-icon" (click)="toggleSidebar()"></i>
+    <p *ngIf="isSidebarOpen" class="mt-4 mb-1 text-white text-start" style="font-size: 10px">MENU</p>
+    <ul class="nav flex-column">
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Home</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/docs']">Getting Started</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/docs/dashboard']">Dashboard</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Forms</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Tables</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/docs/alerts']">Alerts</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <div class="container pt-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white">
+    <div class="container text-center py-3">
+      <p class="mb-0">© 2024 NgEssentials | Developed by <a href="https://www.linkedin.com/in/joabson-arley-667329191/" target="_blank" class="text-light">Joabson Arley</a></p>
+    </div>
+  </footer>
+</div>

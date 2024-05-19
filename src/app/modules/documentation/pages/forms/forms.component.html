@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-6">Forms</h1>
+      <p class="lead">
+        This section provides an overview of the form styles used in this template and how to apply them to your
+        components.
+      </p>
+    </div>
+  </div>
+
+  <!-- Form Overview -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h2>Form Overview</h2>
+      <p>
+        Bootstrap provides a variety of form styles to help you create beautiful and responsive forms. You can
+        use forms with various styles such as inline, horizontal, and custom validation feedback.
+      </p>
+    </div>
+  </div>
+
+  <!-- Basic Form -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Basic Form</h3>
+      <form [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
+        <div class="row g-2">
+          <div class="col-12 col-md-4">
+            <app-input [controlName]="'firstName'" [control]="getControl('firstName')"
+                       [type]="'text'" [isFormSubmitted]="submitted" [isRequired]="true"
+                       [label]="'First Name'" [placeholder]="'Enter your first name'"></app-input>
+          </div>
+          <div class="col-12 col-md-4">
+            <app-input [controlName]="'lastName'" [control]="getControl('lastName')" [type]="'text'"
+                       [isFormSubmitted]="submitted" [label]="'Last Name'" [placeholder]="'Enter your last name'"
+                       [isRequired]="true"></app-input>
+          </div>
+          <div class="col-12 col-md-4">
+            <app-input [controlName]="'email'" [control]="getControl('email')" [type]="'email'"
+                       [isFormSubmitted]="submitted" [label]="'Email'" [placeholder]="'Enter your email address'"
+                       [isRequired]="true"></app-input>
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

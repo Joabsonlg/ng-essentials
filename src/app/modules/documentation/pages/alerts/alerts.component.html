@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="display-6">Alerts</h1>
+      <p class="lead">Alerts provide feedback to users about their actions or system status. There are two main types:
+        Toasts and Dialogs, and four subtypes:</p>
+      <ul>
+        <li><strong class="text-success">Success:</strong> Indicates a successful or positive action.</li>
+        <li><strong class="text-danger">Error:</strong> Indicates an error or potentially negative action.</li>
+        <li><strong class="text-warning">Warning:</strong> Indicates a warning that might need attention.</li>
+        <li><strong class="text-info">Info:</strong> Indicates a neutral informative change or action.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <h2>Toast Alerts</h2>
+      <p>Toasts are brief messages that disappear after a short delay.</p>
+
+      <div class="row g-2">
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-success" (click)="openToast('This is a success toast message', 'Ok', 'success')">
+            Open
+            Success Toast
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-danger" (click)="openToast('This is an error toast message', 'Ok', 'error')">Open
+            Error Toast
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-warning" (click)="openToast('This is a warning toast message', 'Ok', 'warning')">
+            Open
+            Warning Toast
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-info" (click)="openToast('This is an info toast message', 'Ok', 'info')">Open Info
+            Toast
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <h2>Dialog Alerts</h2>
+      <p>Dialogs are modal windows that require user interaction to close.</p>
+      <div class="row g-2">
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-success"
+                  (click)="openDialog('Success Dialog', 'This is a success dialog message', 'success', 'ph ph-check-circle', [{label: 'Close'}])">
+            Open Success Dialog
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-danger"
+                  (click)="openDialog('Error Dialog', 'This is an error dialog message', 'error', 'ph ph-x-circle', [{label: 'Close'}])">
+            Open Error Dialog
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-warning"
+                  (click)="openDialog('Warning Dialog', 'This is a warning dialog message', 'warning', 'ph ph-warning-circle', [{label: 'Close'}])">
+            Open Warning Dialog
+          </button>
+        </div>
+        <div class="col-12 col-md-auto">
+          <button class="btn btn-info"
+                  (click)="openDialog('Info Dialog', 'This is an info dialog message', 'info', 'ph ph-info', [{label: 'Close'}])">
+            Open Info Dialog
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

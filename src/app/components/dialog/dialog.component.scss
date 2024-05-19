@@ -1,0 +1,44 @@
+.success .dialog-icon {
+  color: #28a745;
+}
+
+.error .dialog-icon {
+  color: #dc3545;
+}
+
+.warning .dialog-icon {
+  color: #ffc107;
+}
+
+.info .dialog-icon {
+  color: #17a2b8;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-message {
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-button {
+  margin: 0 8px;
+}

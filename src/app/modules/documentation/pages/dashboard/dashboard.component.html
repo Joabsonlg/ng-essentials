@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="display-6">Dashboard</h1>
+      <p class="lead">Este é um exemplo de um painel de controle com gráficos e estatísticas.</p>
+
+      <app-bar-chart
+        [barChartOptions]="myOptions"
+        [barChartLabels]="myLabels"
+        [barChartType]="'bar'"
+        [barChartLegend]="true"
+        [barChartData]="myData">
+      </app-bar-chart>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label [for]="controlName" class="form-label label fw-semibold">{{ label }}
+    <span *ngIf="isRequired" class="text-danger">*</span>
+  </label>
+  <input [id]="controlName" [formControl]="control" [type]="type" class="form-control" [placeholder]="placeholder"
+         [ngClass]="{'is-invalid': control.invalid && (control.touched || control.dirty || isFormSubmitted)}"
+         (blur)="onBlur()" [mask]="mask">
+  <div *ngIf="control.invalid && (control.touched || control.dirty || isFormSubmitted)" class="text-danger">
+    <small *ngFor="let error of errors">{{ error }}</small>
+  </div>
+</div>

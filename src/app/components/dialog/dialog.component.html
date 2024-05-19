@@ -1,0 +1,11 @@
+<div mat-dialog-content [ngClass]="data.type" class="dialog-content">
+  <i *ngIf="data.icon" [class]="data.icon" class="dialog-icon" [ngClass]="data.type"></i>
+  <h2 class="h2" [ngClass]="data.type">{{ data.title }}</h2>
+  <p class="dialog-message">{{ data.message }}</p>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button *ngFor="let button of data.buttons" mat-button
+          [mat-dialog-close]="button.value" [color]="button.color" class="dialog-button">
+    {{ button.label }}
+  </button>
+</div>

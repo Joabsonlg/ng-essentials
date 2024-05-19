@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h1 class="display-5">Olá, mundo Angular!</h1>
+  <p class="lead">Este é um template base usando Angular e Bootstrap, com um design melhorado.</p>
+  <hr class="my-4">
+  <p>Explore a robustez do Angular para criar aplicações web dinâmicas e responsivas.</p>
+  <a class="btn btn-primary btn-lg" href="https://angular.io/" target="_blank" role="button">Saiba mais</a>
+
+  <!-- Cards de Exemplo -->
+  <div class="row mt-4 g-3">
+    <div class="col-12 col-md-4" *ngFor="let feature of features">
+      <div class="card mb-2 shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ feature.title }}</h5>
+          <p class="card-text">{{ feature.description }}</p>
+          <a [routerLink]="feature.link" class="btn btn-primary">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-6">Tables</h1>
+      <p class="lead">
+        This section provides an overview of the table styles used in this template and how to apply them to your
+        components.
+      </p>
+    </div>
+  </div>
+
+  <!-- Table Overview -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h2>Table Overview</h2>
+      <p>
+        Bootstrap provides a variety of table styles to help you present data effectively. You can use tables with
+        various styles such as bordered, striped, hoverable, and responsive.
+      </p>
+    </div>
+  </div>
+
+  <!-- Basic Table -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Basic Table</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.first }}</td>
+          <td>{{ item.last }}</td>
+          <td>{{ item.handle }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Striped Table -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Striped Table</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.first }}</td>
+          <td>{{ item.last }}</td>
+          <td>{{ item.handle }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bordered Table -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Bordered Table</h3>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.first }}</td>
+          <td>{{ item.last }}</td>
+          <td>{{ item.handle }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Hoverable Table -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Hoverable Table</h3>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.first }}</td>
+          <td>{{ item.last }}</td>
+          <td>{{ item.handle }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Responsive Table -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Responsive Table</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Handle</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of items; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.first }}</td>
+            <td>{{ item.last }}</td>
+            <td>{{ item.handle }}</td>
+            <td>{{ item.handle }}</td>
+            <td>{{ item.handle }}</td>
+            <td>{{ item.handle }}</td>
+            <td>{{ item.handle }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

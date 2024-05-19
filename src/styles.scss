@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+// Import Angular Material theme
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Import Bootstrap functions and variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// Define custom color variables
+$floral-white: #FFFCF2;
+$timber-wolf: #CCC5B9;
+$black-olive: #403D39;
+$eerie-black: #252422;
+$flame: #EB5E28;
+
+// Update Bootstrap's main color variables
+$primary: $flame;
+$secondary: $black-olive;
+$success: #26af80;
+$info: #1dcbe6;
+$warning: #ffcc35;
+$danger: #DC3545;
+$light: $floral-white;
+$dark: $eerie-black;
+
+// Update Bootstrap's color map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Import Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Define a placeholder for white color
+%white-color {
+  color: #fff !important;
+}
+
+// Extend the placeholder for classes that need white color
+.bg-primary, .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus,
+.btn-outline-primary:hover,
+.bg-success, .btn-success, .btn-success:hover, .btn-success:active, .btn-success:focus,
+.btn-outline-success:hover,
+.bg-info, .btn-info, .btn-info:hover, .btn-info:active, .btn-info:focus,
+.btn-outline-info:hover {
+  @extend %white-color;
+}
+
+// Custom styles for Angular Material components
+.cdk-overlay-container {
+  z-index: 1050 !important;
+}
+
+.mat-mdc-snack-bar-container {
+  &.success-snackbar {
+    --mdc-snackbar-container-color: #26af80;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: white;
+  }
+
+  &.error-snackbar {
+    --mdc-snackbar-container-color: #DC3545;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: white;
+  }
+
+  &.warning-snackbar {
+    --mdc-snackbar-container-color: #ffcc35;
+    --mat-mdc-snack-bar-button-color: #000;
+    --mdc-snackbar-supporting-text-color: black;
+  }
+
+  &.info-snackbar {
+    --mdc-snackbar-container-color: #1dcbe6;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: white;
+  }
+}
